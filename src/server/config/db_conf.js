@@ -1,10 +1,19 @@
 import  dotenv from 'dotenv';
 import mongoose from 'mongoose';
+import  path    from 'path';
+import  {mode} from  '../utils/env.select.utils.js'
 
-dotenv.config({});
+if(mode === 'prod'){
+    dotenv.config({path:    path.resolve(process.cwd(), './.envprod')});
+}else{
+    dotenv.config({path:    path.resolve(process.cwd(), './.envdev')});
+}   
 
+dotenv.config({path:    path.resolve(process.cwd(), './.envdev')});
 
-mongoose.connect(process.env.MONGO_URI_CLOUD, (err)   =>  {
+console.log('EL MODO ACTUAL ES:',   mode);
+
+mongoose.connect(process.env.MONGO_URI, (err)   =>  {
     if(err){
         console.log('No se pudo conectar a MongoDB')
     }else{

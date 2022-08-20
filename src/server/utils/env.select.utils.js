@@ -13,6 +13,4 @@ const   options =   {
 
 const   {port, mode} =   minimist(process.argv.slice(2), options);
 
-console.log(port);
-
 export  {port,  mode}

@@ -1,0 +1,2 @@
+MONGO_URI=mongodb+srv://nelairs:4OeeElUn86vFasTO@cluster0.ufehwll.mongodb.net/test?retryWrites=true&w=majority
+MONGO_TEST_STRING=PROD MODE

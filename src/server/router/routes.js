@@ -24,7 +24,7 @@ router.get('/productos',   (req,   res)    =>{
             res.status(200).send(arrayProd)
         })
         .catch(function(v)  {
-            console.log('error');
+            // console.log('error');
             const   loggerFileError  =   log4js.getLogger('fileError');
             loggerFileError.error(`Error en metodo DB`)
         });
@@ -60,7 +60,7 @@ router.post('/productos',   (req,   res)    =>  {
             res.status(200).redirect('/api/productos');
         })
         .catch(()    =>     {
-            console.log('error');
+            // console.log('error');
             const   loggerFileError  =   log4js.getLogger('fileError');
             loggerFileError.error(`Error en metodo DB`)
 
@@ -119,4 +119,5 @@ router.get('*', (req,   res)    =>  {
     loggerFileWarn.warn(`La URL es: ${saveUrl} Tipo de peticion:  ${saveMethod}`)
 
 })
+
 export default   router;
